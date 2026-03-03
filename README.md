@@ -10,7 +10,7 @@ A full-stack MERN application that uses the **Groq LLM API** to deliver personal
 |-------------|-------------------------------------|
 | Frontend    | React 18 + Vite + Tailwind CSS      |
 | Backend     | Node.js + Express.js                |
-| Database    | MongoDB (Mongoose)                  |
+| Database    | MongoDB Atlas (Mongoose)            |
 | AI          | Groq API (`llama3-8b-8192`)         |
 | Auth        | JWT + bcryptjs                      |
 | Config      | dotenv                              |
@@ -48,7 +48,7 @@ frontend/
 
 ### Prerequisites
 - Node.js >= 18
-- MongoDB running locally (or a MongoDB Atlas URI)
+- A [MongoDB Atlas](https://www.mongodb.com/atlas) cluster (or a local MongoDB instance)
 - A [Groq API key](https://console.groq.com/)
 
 ### Backend
@@ -74,7 +74,7 @@ npm run dev                   # starts on port 3000 (proxies /api -> :5000)
 
 ```env
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/carrerai
+MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/carrerai?retryWrites=true&w=majority
 JWT_SECRET=your_jwt_secret_here
 GROQ_API_KEY=your_groq_api_key_here
 ADMIN_EMAIL=admin@carrerai.com
